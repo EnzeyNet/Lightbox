@@ -1,1 +1,23 @@
-"My Page" 
+<html ng-app="net.enzey.example">
+	<head>
+		<title>Dialog Example</title>
+		<style>
+			[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+				display: none !important;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.js"></script>
+		<script src="dist/Dialog.js"></script>
+		<script src="example.js"></script>
+
+	</head>
+	<body ng-controller="dialogManagerCtrl">
+
+		<button ng-click="show()">Show D</button>
+		<div nz-dialog="warningDialog.html">
+			<span>My Message</span>
+		</div>
+
+	</body>
+</html>
