@@ -1,0 +1,19 @@
+[data-nz-lightbox-logic]:last-of-type .screenMask {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.lightbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  max-width: 80%;
+  max-height: 80%;
+  background-color: #ffffff;
+}
