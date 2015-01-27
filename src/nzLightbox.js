@@ -17,7 +17,7 @@
 
 				var lightbox = angular.element('<div class="lightbox"></div>');
 				var form = angular.element('<form name="lightboxForm"></form>');
-				form.attr('nz-include-transclude', attrs[this.name]);
+				form.attr('nz-transcluded-include', attrs[this.name]);
 				form.append(element.children());
 				lightbox.append(form);
 				wrapper.append(lightbox);
@@ -25,6 +25,7 @@
 				return wrapper[0].outerHTML;
 			},
 			compile: function($element, $attrs) {
+				$element.addClass('lightboxContainer');
 
 				return {
 					pre: function(scope, element, attrs) {
@@ -45,7 +46,7 @@
 		}
 	});
 
-	module.directive('nzLightboxLogic', function(nzService) {
+	module.directive('nzLightboxLogic', function(nzEventHelper) {
 		return {
 			// Each Lightbox needs its own scope.
 			//   If dialogs are nested (popups in popups) then the lower level lightbox can squelch the event
@@ -80,7 +81,7 @@
 				if (!angular.isDefined(attrs.modal)) {
 					var lightboxElem = element[0].querySelector('.lightbox');
 					lightboxElem = angular.element(lightboxElem);
-					nzService.registerClickAwayAction(function(event) {
+					nzEventHelper.registerClickAwayAction(function(event) {
 						thisCtrl.rejectForm();
 						element.remove();
 					}, lightboxElem);
