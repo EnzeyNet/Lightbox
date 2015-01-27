@@ -15,11 +15,11 @@
 					wrapper.append(mask);
 				}
 
-				var lightbox = angular.element('<div class="lightbox"></div>');
+				var lightbox = angular.element('<form class="lightbox"></form>');
 				var form = angular.element('<form name="lightboxForm"></form>');
-				form.attr('nz-transcluded-include', attrs[this.name]);
-				form.append(element.children());
-				lightbox.append(form);
+				lightbox.attr('nz-transcluded-include', attrs[this.name]);
+				lightbox.append(element.children());
+				//lightbox.append(form);
 				wrapper.append(lightbox);
 
 				return wrapper[0].outerHTML;
