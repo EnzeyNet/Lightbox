@@ -29,16 +29,17 @@
   width: 100%;
 }
 .lightboxContainer .lightbox {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 80vw;
+  max-height: 80vh;
   top: 100%;
   position: relative;
   display: inline-flex;
   vertical-align: middle;
   text-align: initial;
-}
-.lightboxContainer .lightbox > form {
-  display: flex;
   margin: 0;
   padding: 0;
+  flex-direction: column;
+}
+.lightboxContainer .lightbox > * {
+  max-height: inherit;
 }
